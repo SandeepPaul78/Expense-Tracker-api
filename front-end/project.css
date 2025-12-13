@@ -1,0 +1,148 @@
+      *{
+        user-select: none;
+      }
+      #main-heading {
+        text-align: center;
+       
+      }
+      #wraper1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    
+      }
+
+      #authbtn{
+            display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 3rem;
+    
+    width: 90%;
+    color: blue;
+      }
+
+      #authbtn a{
+        text-decoration: none;
+      }
+
+      #logout-container{
+        text-align: end;
+        margin-right: 5rem;
+      }
+
+      .top-wraper{
+        text-align: center;
+      }
+      
+      .wraper-income-expence {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+  
+        width: 100%;
+      }
+      .wraper1 > div:first-child {
+        color: rgb(59, 186, 197);
+      }
+      .wraper-income-expence > div:first-child {
+        color: rgb(15, 202, 64);
+      }
+      .wraper-income-expence > div:nth-child(2) {
+        color: red;
+      }
+
+      #wraper-table {
+        height: 50vh;
+        overflow-y: scroll;
+      }
+      #table {
+        width: 50%;
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: fixed;
+        margin: 0 auto;
+      }
+
+      #table,
+      th,
+      td {
+        padding: 1rem;
+        text-align: center;
+        border: 1px solid black;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+       thead th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background: white;
+        z-index: 1;
+      }
+      #transaction-model{
+        position :absolute;
+        top: 35%;
+        right : 8%;
+        border: 1px solid black;
+        padding:0.5rem;
+      }
+       #transaction-model h3{
+        text-align: center;
+       }
+      .model-wraper{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        
+      }
+      .model-wraper input, select{
+        padding: 0.5rem;
+      }
+  
+      .addbtn{
+        display: flex;
+        justify-content: space-between;
+        
+      }
+      .addbtn button{
+        padding: 0.5rem;
+
+      }
+
+      @media screen and (max-width:768px){
+
+        #table{
+          width : 100%;
+
+        }
+        #table, th, td {
+          padding: 0.5rem;
+        }
+        #transaction-model{
+          top : 65%;
+          width: 74%;
+        }
+
+        #authbtn{
+          position: absolute;
+          top: 1%;
+         justify-content: space-between;
+        }
+#logout-container {
+   
+    position: absolute;
+    top: 1%;
+    right: -15%;
+        
+      }
+
+      #wraper-table {
+        height : 35vh;
+        overflow-y: scroll;
+      }
+
+    }

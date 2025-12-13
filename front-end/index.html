@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+  </head>
+  <body>
+    <!-- login div hide script -->
+     <!-- <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get('loggedIn') === '1') {
+      const el = document.getElementById('authbtn');
+      if (el) el.style.display = 'none';
+      history.replaceState(null, '', location.pathname);
+    }
+  </script> -->
+    <div id="container">
+      <h2 id="main-heading">Expence Tracker</h2>
+       <div id="authbtn">
+        <a href="signup.html" >Sign Up</a>
+        <a href="login.html" >Login In</a>
+      </div>
+      <div id="logout-container" style="display: none;">
+      <button id="logout-btn">Logout</button>
+     </div>
+      <div class="wraper1">
+        <div class="top-wraper">
+          <p class="total">Total Amount</p>
+          <p class="total" id="total">₹0</p>
+        </div>
+      
+        <div class="wraper-income-expence">
+          <div>
+            <p class="income">Income</p>
+            <p class="income" id="income">₹0</p>
+          </div>
+          <div>
+            <p class="expence">Expence</p>
+            <p class="expence" id="expence">₹0</p>
+          </div>
+        </div>
+        <div id="wraper-table">
+          <table id="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Delete</th>   
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- <tr>
+                <td class="name-expence">Maggi</td>
+                <td class="transaction-amount">₹3999</td>
+                <td class="cardtype">Credit</td>
+                <td class="date">23-03-2020</td>
+                <td>
+                  <button class="editTran">Edit</button>
+                  <button class="deleteTran">Delet</button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+     
+      <!-- ADD TRANSACTION MODEL -->
+       <div id="transaction-model">
+        <h3>Expense Details</h3>
+         <div class="model-wraper">
+          <input type="text" class="transaction-Name" placeholder="Transaction Name">
+          <input type="number" class="amount" placeholder="Amount">
+          <select class="modeltype">
+            <option value=""  disabled>Type</option>
+            <option value="Credit">Credit</option>
+            <option value="Debit">Debit</option>
+          </select>
+          <div class="addbtn">
+            <!-- <button type="button" id="clrBtntran">Clear</button> -->
+            <button type="button" id="addBtnTran">+ADD</button>
+          </div>
+         </div> 
+       </div>
+    </div>
+    <script src="project.js"></script>
+  </body>
+</html>
