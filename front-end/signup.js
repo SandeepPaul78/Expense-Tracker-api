@@ -18,9 +18,17 @@ submit.addEventListener("click", async(e)=>{
         if(response.ok){
             alert("Signup successful! Please log in.");
             window.location.href = "login.html";
-        } else {
-            const result = await response.json();
-            alert(`Signup failed: ${result.message}`);
+        } else if (response.status === 400){
+
+            const errorData = await response.json();
+            displayValidationErrors(errorData.errors);
+
+
+        }
+        
+        else {
+            
+            alert("Signup failed");
         }
         
     } catch (error) {
@@ -28,4 +36,19 @@ submit.addEventListener("click", async(e)=>{
         
     }
 });
+
+function displayValidationErrors(errors) {
+    const errorDiv = document.getElementById('show-errors-msg'); 
+  
+    errorDiv.innerHTML = ''; 
+    errorDiv.style.display = 'block';
+    
+   
+    errors.forEach(err => {
+        const p = document.createElement('p');
+        p.className = 'error-style'; // CSS styling के लिए
+        p.textContent = `Error in ${err.param}: ${err.msg}`;
+        errorDiv.appendChild(p);
+    });
+}
 
