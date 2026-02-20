@@ -5,129 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup Page</title>
     <style>
+      * { box-sizing: border-box; }
       body {
-        background: linear-gradient(45deg, black, transparent);;
-        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
-      } 
+        background:
+          radial-gradient(circle at 18% 22%, rgba(0, 243, 255, 0.18), transparent 36%),
+          radial-gradient(circle at 82% 16%, rgba(169, 59, 255, 0.22), transparent 35%),
+          #070b19;
+        color: #edf8ff;
+      }
       .signup-container {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 2.5rem 2rem;
-        border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(255,255,255,0.3);
-        width: 400px;
-        text-align: center;
+        width: min(460px, 94vw);
+        background: rgba(11, 19, 43, 0.88);
+        border: 1px solid rgba(104, 214, 255, 0.33);
+        border-radius: 18px;
+        padding: 2rem;
+        box-shadow: 0 0 30px rgba(0, 250, 255, 0.16), inset 0 0 18px rgba(131, 52, 255, 0.12);
       }
       .signup-container h2 {
-        margin-bottom: 1.5rem;
-        color: white;
-        font-weight: 600;
-        letter-spacing: 1px;
+        margin: 0 0 1.2rem;
+        text-align: center;
+        color: #8ef6ff;
+        text-shadow: 0 0 12px rgba(0, 255, 234, 0.42);
       }
       .signup-container label {
         display: block;
         text-align: left;
-        margin-bottom: 0.5rem;
-        color: white;
-        font-size: 1rem;
+        margin-bottom: 0.45rem;
+        color: #d0eeff;
       }
-      .signup-container input[type="text"],
-      .signup-container input[type="email"],
-      .signup-container input[type="password"],
-      .signup-container input[type="tel"] {
-        width: 92%;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1.2rem;
-        border: 1.5px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border-color 0.3s, box-shadow 0.3s;
+      .signup-container input {
+        width: 100%;
+        padding: 0.74rem 0.9rem;
+        margin-bottom: 0.95rem;
+        border: 1px solid rgba(111, 190, 255, 0.42);
+        border-radius: 10px;
+        background: rgba(12, 24, 50, 0.95);
+        color: #eef6ff;
         outline: none;
+        transition: border-color 0.25s, box-shadow 0.25s;
       }
       .signup-container input:focus {
-        border-color: #ff758c;
-        box-shadow: 0 0 8px #ff758c33;
+        border-color: #24eafc;
+        box-shadow: 0 0 13px rgba(36, 234, 252, 0.33);
       }
       .signup-container button {
         width: 100%;
-        padding: 0.8rem;
-        background: black;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
+        padding: 0.82rem;
+        background: linear-gradient(120deg, rgba(130, 35, 255, 0.64), rgba(0, 215, 255, 0.48));
+        color: #f8fdff;
+        border: 1px solid rgba(0, 255, 238, 0.5);
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 700;
         cursor: pointer;
-        /* transition: color 0.3s; */
-        box-shadow: 0 4px 16px rgba(44, 62, 80, 0.1);
-        position: relative;
-        overflow: hidden;
-        
-        
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-
-      .signup-container button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100%;
-        background: white;
-        border-radius: 8px;
-        z-index: 1;
-        transition: left 0.3s ease-in-out;
-       
+      .signup-container button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 16px rgba(0, 255, 234, 0.56), 0 0 24px rgba(145, 0, 255, 0.34);
       }
-
-      .signup-container button:hover::before {
-        left: 0;
-      }
-
-      .signup-container button span {
-        position: relative;
-        z-index: 2;
-        transition: color 0.3s ease-in-out;
-      }
-
-      .signup-container button:hover span{
-        color: black;
-      }
-
-        #show-errors-msg{
-        margin-bottom : 5px;
+      #show-errors-msg {
+        margin-bottom: 5px;
         display: none;
       }
-
-      .error-style{
-        color:rgb(245, 68, 68);
+      .error-style {
+        color: rgb(255, 99, 131);
         margin: 0;
-   
-       text-align: start;
-       font-style: italic;
+        text-align: start;
+        font-style: italic;
       }
-
-      
-
+      .signup-container h3 {
+        margin: 0.95rem 0 0;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      .signup-container a {
+        color: #81feff;
+      }
     </style>
   </head>
   <body>
     <div class="signup-container">
       <h2>Create an Account</h2>
-       <div id="show-errors-msg">
-      
-      
-      </div>
+      <div id="show-errors-msg"></div>
       <form id="signup-form">
         <label for="first-name">First Name:</label>
         <input type="text" class="inp" name="firstName" required />
 
         <label for="last-name">Last Name:</label>
-        <input type="text"class="inp" name="lastName" required />
+        <input type="text" class="inp" name="lastName" required />
 
         <label for="email">Email:</label>
         <input type="email" class="inp" name="email" required />
@@ -139,12 +112,7 @@
         <input type="password" class="inp" name="password" required />
 
         <label for="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          class="inp"
-          name="confirmPassword"
-          required
-        />
+        <input type="password" class="inp" name="confirmPassword" required />
 
         <button type="button" id="submit"><span>Sign Up</span></button>
         <h3>Already have an account <a href="login.html">Login here</a></h3>
