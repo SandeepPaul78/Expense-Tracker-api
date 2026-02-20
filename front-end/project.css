@@ -1,148 +1,237 @@
-      *{
-        user-select: none;
-      }
-      #main-heading {
-        text-align: center;
-       
-      }
-      #wraper1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-    
-      }
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
 
-      #authbtn{
-            display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: 3rem;
-    
-    width: 90%;
-    color: blue;
-      }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #eef6ff;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 255, 213, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(155, 0, 255, 0.22), transparent 38%),
+    radial-gradient(circle at 50% 85%, rgba(0, 153, 255, 0.18), transparent 40%),
+    #090d1a;
+}
 
-      #authbtn a{
-        text-decoration: none;
-      }
+#container {
+  max-width: 1150px;
+  margin: 2rem auto;
+  padding: 1.8rem;
+  border: 1px solid rgba(111, 197, 255, 0.25);
+  border-radius: 20px;
+  background: rgba(8, 12, 28, 0.82);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 36px rgba(0, 214, 255, 0.16),
+    inset 0 0 24px rgba(86, 40, 255, 0.12);
+}
 
-      #logout-container{
-        text-align: end;
-        margin-right: 5rem;
-      }
+#main-heading {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 14px rgba(0, 255, 238, 0.45);
+}
 
-      .top-wraper{
-        text-align: center;
-      }
-      
-      .wraper-income-expence {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-  
-        width: 100%;
-      }
-      .wraper1 > div:first-child {
-        color: rgb(59, 186, 197);
-      }
-      .wraper-income-expence > div:first-child {
-        color: rgb(15, 202, 64);
-      }
-      .wraper-income-expence > div:nth-child(2) {
-        color: red;
-      }
+#authbtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-      #wraper-table {
-        height: 50vh;
-        overflow-y: scroll;
-      }
-      #table {
-        width: 50%;
-        border-collapse: collapse;
-        border: 1px solid black;
-        table-layout: fixed;
-        margin: 0 auto;
-      }
+#authbtn a,
+#logout-btn,
+#addBtnTran,
+.deleteTran,
+.editTran {
+  text-decoration: none;
+  color: #d9efff;
+  background: linear-gradient(135deg, rgba(88, 0, 255, 0.45), rgba(0, 228, 255, 0.3));
+  border: 1px solid rgba(0, 255, 238, 0.45);
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
 
-      #table,
-      th,
-      td {
-        padding: 1rem;
-        text-align: center;
-        border: 1px solid black;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-       thead th {
-        position: sticky;
-        top: 0;
-        left: 0;
-        background: white;
-        z-index: 1;
-      }
-      #transaction-model{
-        position :absolute;
-        top: 35%;
-        right : 8%;
-        border: 1px solid black;
-        padding:0.5rem;
-      }
-       #transaction-model h3{
-        text-align: center;
-       }
-      .model-wraper{
-        
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-        
-      }
-      .model-wraper input, select{
-        padding: 0.5rem;
-      }
-  
-      .addbtn{
-        display: flex;
-        justify-content: space-between;
-        
-      }
-      .addbtn button{
-        padding: 0.5rem;
+#authbtn a:hover,
+#logout-btn:hover,
+#addBtnTran:hover,
+.deleteTran:hover,
+.editTran:hover {
+  transform: translateY(-2px) scale(1.02);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 255, 238, 0.6), 0 0 24px rgba(150, 64, 255, 0.4);
+}
 
-      }
-
-      @media screen and (max-width:768px){
-
-        #table{
-          width : 100%;
-
-        }
-        #table, th, td {
-          padding: 0.5rem;
-        }
-        #transaction-model{
-          top : 65%;
-          width: 74%;
-        }
-
-        #authbtn{
-          position: absolute;
-          top: 1%;
-         justify-content: space-between;
-        }
 #logout-container {
-   
-    position: absolute;
-    top: 1%;
-    right: -15%;
-        
-      }
+  text-align: end;
+  margin: 1rem 0;
+}
 
-      #wraper-table {
-        height : 35vh;
-        overflow-y: scroll;
-      }
+.top-wraper,
+.wraper-income-expence > div {
+  text-align: center;
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  background: rgba(12, 20, 44, 0.72);
+  border: 1px solid rgba(126, 190, 255, 0.22);
+  box-shadow: inset 0 0 12px rgba(8, 225, 255, 0.12);
+}
 
-    }
+.total {
+  font-weight: 700;
+  color: #7bf9ff;
+}
+
+.wraper-income-expence {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.wraper-income-expence > div:first-child {
+  color: #34ff99;
+  flex: 1;
+}
+
+.wraper-income-expence > div:nth-child(2) {
+  color: #ff5c8d;
+  flex: 1;
+}
+
+#wraper-table {
+  height: 50vh;
+  overflow-y: auto;
+  margin-top: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(100, 182, 255, 0.22);
+}
+
+#table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+
+#table,
+th,
+td {
+  padding: 0.85rem;
+  text-align: center;
+  border: 1px solid rgba(112, 186, 255, 0.24);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+th {
+  color: #8ef7ff;
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:hover {
+  background: rgba(0, 225, 255, 0.08);
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #0f1b3d;
+  z-index: 1;
+}
+
+#transaction-model {
+  position: absolute;
+  top: 33%;
+  right: 6%;
+  border: 1px solid rgba(0, 255, 229, 0.35);
+  border-radius: 14px;
+  padding: 0.8rem;
+  background: rgba(7, 12, 28, 0.92);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
+}
+
+#transaction-model h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #91fbff;
+}
+
+.model-wraper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
+}
+
+.model-wraper input,
+.model-wraper select {
+  padding: 0.62rem;
+  border-radius: 10px;
+  border: 1px solid rgba(116, 187, 255, 0.45);
+  background: rgba(11, 23, 46, 0.9);
+  color: #e7f5ff;
+  outline: none;
+}
+
+.model-wraper input:focus,
+.model-wraper select:focus {
+  border-color: #25ecff;
+  box-shadow: 0 0 12px rgba(37, 236, 255, 0.38);
+}
+
+.addbtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  #transaction-model {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #table,
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .wraper-income-expence {
+    flex-direction: column;
+  }
+
+  #authbtn {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #wraper-table {
+    height: 35vh;
+  }
+}

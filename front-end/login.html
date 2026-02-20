@@ -5,97 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <style>
+      * { box-sizing: border-box; }
       body {
-        background: linear-gradient(black, white);
-        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(0, 246, 255, 0.2), transparent 35%),
+          radial-gradient(circle at 80% 15%, rgba(166, 46, 255, 0.25), transparent 35%),
+          #070b19;
+        color: #eff7ff;
       }
       .login-container {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 2.5rem 2rem;
-        border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(255,255,255,0.3);
-        width: 350px;
-        text-align: center;
+        width: min(420px, 92vw);
+        background: rgba(10, 17, 38, 0.85);
+        border: 1px solid rgba(98, 206, 255, 0.35);
+        border-radius: 18px;
+        padding: 2.2rem;
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.18), inset 0 0 18px rgba(120, 46, 255, 0.12);
       }
       .login-container h2 {
-        margin-bottom: 1.5rem;
-        color: white;
-        font-weight: 600;
-        letter-spacing: 1px;
+        margin: 0 0 1.4rem;
+        text-align: center;
+        color: #8cf6ff;
+        text-shadow: 0 0 12px rgba(0, 255, 238, 0.42);
       }
       .login-container label {
         display: block;
-        text-align: left;
-        margin-bottom: 0.5rem;
-        color: white;
-        font-size: 1rem;
+        margin-bottom: 0.45rem;
+        color: #c9e9ff;
       }
       .login-container input[type="email"],
       .login-container input[type="password"] {
-        width: 90%;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1.2rem;
-        border: 1.5px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border-color 0.3s, box-shadow 0.3s;
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 0.78rem 0.92rem;
+        border-radius: 10px;
+        border: 1px solid rgba(106, 188, 255, 0.45);
+        background: rgba(11, 23, 48, 0.95);
+        color: #eff7ff;
         outline: none;
+        transition: box-shadow 0.25s, border-color 0.25s;
       }
-      .login-container input[type="email"]:focus,
-      .login-container input[type="password"]:focus {
-        border-color: #2575fc;
-        box-shadow: 0 0 8px #2575fc33;
+      .login-container input:focus {
+        border-color: #1ff4ff;
+        box-shadow: 0 0 13px rgba(31, 244, 255, 0.35);
       }
       .login-container button {
         width: 100%;
-        padding: 0.8rem;
-        background: black;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
+        padding: 0.82rem;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 255, 229, 0.5);
+        background: linear-gradient(120deg, rgba(115, 30, 255, 0.65), rgba(0, 218, 255, 0.5));
+        color: #f5fdff;
+        font-weight: 700;
+        letter-spacing: 0.5px;
         cursor: pointer;
-        position: relative;
-        overflow: hidden;
-
-        /* box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10); */
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-      .login-container button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100%;
-        border-radius: 8px;
-        background: white;
-        z-index: 1;
-        transition: left 0.3s ease-in-out;
+      .login-container button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 16px rgba(0, 255, 234, 0.55), 0 0 24px rgba(147, 0, 255, 0.35);
       }
-
-      .login-container button:hover::before {
-        left: 0;
+      .login-container h3 {
+        margin: 1rem 0 0;
+        font-size: 0.95rem;
+        text-align: center;
+        font-weight: 500;
       }
-
-      .login-container button span {
-        position: relative;
-        z-index: 2;
-        transition: color 0.3s ease-in-out;
-      }
-
-      .login-container button:hover span {
-        color: black;
+      .login-container a {
+        color: #80feff;
       }
     </style>
   </head>
   <body>
-    
     <div class="login-container">
       <h2>Login to Expense Tracker</h2>
       <form id="login-form">
@@ -106,11 +92,10 @@
         <input type="password" class="inp" name="password" required />
 
         <button id="submit" type="button"><span>Login</span></button>
-         <h3>Create Account <a href="signup.html">Signup here</a></h3>
+        <h3>Create Account <a href="signup.html">Signup here</a></h3>
       </form>
     </div>
- 
-    
+
     <script src="login.js"></script>
   </body>
 </html>
