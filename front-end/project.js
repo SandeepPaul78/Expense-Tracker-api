@@ -28,6 +28,30 @@ const incomeEl = document.getElementById("income");
 const expenceEl = document.getElementById("expence");
 const totalEl = document.getElementById("total");
 
+// tab buttons (switch between transactions and add form)
+const tabButtons = document.querySelectorAll(".tab-button");
+
+tabButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    tabButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const target = btn.dataset.target;
+    document.querySelectorAll("#tab-content > section").forEach((sec) => {
+      sec.style.display = sec.id === target ? "block" : "none";
+    });
+
+    if (target === "transactions-section") {
+      // refresh table when coming back
+      fetchTransactions();
+    } else {
+      // clear form when opening add section
+      document.querySelector(".transaction-Name").value = "";
+      document.querySelector(".amount").value = "";
+      document.querySelector(".modeltype").value = "";
+    }
+  });
+});
+
 function formatCurrency(n) {
   return `₹${parseFloat(n).toFixed(2)}`;
 }
@@ -117,6 +141,9 @@ $addBtn.addEventListener("click", async () => {
   document.querySelector(".modeltype").value = "";
 
   fetchTransactions();
+
+  // after adding, show transactions tab
+  document.querySelector('[data-target="transactions-section"]').click();
 });
 
 // ------------ DELETE TRANSACTION ----------------

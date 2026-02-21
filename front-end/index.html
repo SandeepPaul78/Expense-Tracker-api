@@ -25,66 +25,64 @@
       <div id="logout-container" style="display: none;">
       <button id="logout-btn">Logout</button>
      </div>
-      <div class="wraper1">
-        <div class="top-wraper">
-          <p class="total">Total Amount</p>
-          <p class="total" id="total">₹0</p>
-        </div>
-      
-        <div class="wraper-income-expence">
-          <div>
-            <p class="income">Income</p>
-            <p class="income" id="income">₹0</p>
-          </div>
-          <div>
-            <p class="expence">Expence</p>
-            <p class="expence" id="expence">₹0</p>
-          </div>
-        </div>
-        <div id="wraper-table">
-          <table id="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Type</th>
-                <th>Date</th>
-                <th>Delete</th>   
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- <tr>
-                <td class="name-expence">Maggi</td>
-                <td class="transaction-amount">₹3999</td>
-                <td class="cardtype">Credit</td>
-                <td class="date">23-03-2020</td>
-                <td>
-                  <button class="editTran">Edit</button>
-                  <button class="deleteTran">Delet</button>
-                </td>
-              </tr> -->
-            </tbody>
-          </table>
-        </div>
+      <!-- tabs for switching views -->
+      <div id="tab-buttons">
+        <button class="tab-button active" data-target="transactions-section">Transactions</button>
+        <button class="tab-button" data-target="add-section">Add Transaction</button>
       </div>
-     
-      <!-- ADD TRANSACTION MODEL -->
-       <div id="transaction-model">
-        <h3>Transaction Details</h3>
-         <div class="model-wraper">
-          <input type="text" class="transaction-Name" placeholder="Transaction Name">
-          <input type="number" class="amount" placeholder="Amount">
-          <select class="modeltype">
-            <option value=""  disabled>Type</option>
-            <option value="Credit">Credit</option>
-            <option value="Debit">Debit</option>
-          </select>
-          <div class="addbtn">
-            <!-- <button type="button" id="clrBtntran">Clear</button> -->
-            <button type="button" id="addBtnTran">+ADD</button>
+
+      <div id="tab-content">
+        <section id="transactions-section">
+          <div class="wraper1">
+            <div class="top-wraper">
+              <p class="total">Total Amount</p>
+              <p class="total" id="total">₹0</p>
+            </div>
+          
+            <div class="wraper-income-expence">
+              <div>
+                <p class="income">Income</p>
+                <p class="income" id="income">₹0</p>
+              </div>
+              <div>
+                <p class="expence">Expence</p>
+                <p class="expence" id="expence">₹0</p>
+              </div>
+            </div>
+            <div id="wraper-table">
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Delete</th>   
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
           </div>
-         </div> 
-       </div>
+        </section>
+        <section id="add-section" style="display:none;">
+          <div id="transaction-model">
+            <h3>Transaction Details</h3>
+             <div class="model-wraper">
+              <input type="text" class="transaction-Name" placeholder="Transaction Name">
+              <input type="number" class="amount" placeholder="Amount">
+              <select class="modeltype">
+                <option value=""  disabled>Type</option>
+                <option value="Credit">Credit</option>
+                <option value="Debit">Debit</option>
+              </select>
+              <div class="addbtn">
+                <button type="button" id="addBtnTran">+ADD</button>
+              </div>
+             </div> 
+           </div>
+        </section>
+      </div>
     </div>
     <script src="project.js"></script>
   </body>

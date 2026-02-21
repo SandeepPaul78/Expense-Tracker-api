@@ -3,6 +3,10 @@
   user-select: none;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -26,6 +30,7 @@ body {
   box-shadow:
     0 0 36px rgba(0, 214, 255, 0.16),
     inset 0 0 24px rgba(86, 40, 255, 0.12);
+  overflow-x: hidden;
 }
 
 #main-heading {
@@ -199,6 +204,52 @@ thead th {
 .addbtn {
   display: flex;
   justify-content: flex-end;
+}
+
+/* tab navigation */
+#tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tab-button {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, rgba(88, 0, 255, 0.45), rgba(0, 228, 255, 0.3));
+  border: 1px solid rgba(0, 255, 238, 0.45);
+  border-radius: 8px;
+  color: #d9efff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.tab-button:hover {
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, rgba(0, 255, 238, 0.6), rgba(150, 64, 255, 0.4));
+  color: #fff;
+}
+
+/* ensure the add form doesn’t overlap */
+#transaction-model {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  /* on large screens, center the form section */
+  #add-section {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 900px) {
