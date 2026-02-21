@@ -265,6 +265,7 @@ thead th {
   #container {
     margin: 1rem;
     padding: 1rem;
+    overflow: hidden;
   }
 }
 
@@ -272,13 +273,11 @@ thead th {
   #table,
   th,
   td {
-    padding: 0.5rem;
+    padding: 0.1rem;
     font-size: 0.88rem;
   }
 
-  .wraper-income-expence {
-    flex-direction: column;
-  }
+ 
 
   #authbtn {
     justify-content: center;
